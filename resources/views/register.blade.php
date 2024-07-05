@@ -11,9 +11,9 @@
         <div class="col-lg-5">
             <div class="card">
                 <div class="card-header">
-                    <div class="d-flex justify-content-beetween">
-                        <h1 class="card-title">Email Address</h1>
-                        <a href="{{ route('respondents.create') }}" class="btn btn-primary">Kembali</a>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h1 class="card-title m-0">Email Address</h1>
+                        <a href="{{ url('/') }}" class="btn btn-primary">Kembali</a>
                     </div>
                 </div>
                 <div class="card-body">
