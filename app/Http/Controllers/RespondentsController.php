@@ -34,48 +34,4 @@ class RespondentsController extends Controller
 
         return redirect()->route('respondents.index')->with('success', 'Data added successfully');
     }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        $respondents = Respondents::findOrFail($id);
-
-        return view('respondents.show', compact('respondents'));
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        $respondents = Respondents::findOrFail($id);
-
-        return view('respondents.edit', compact('respondents'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        $respondents = Respondents::findOrFail($id);
-
-        $respondents->update($request->all());
-
-        return redirect()->route('respondents.index')->with('success', 'Data updateed successfully');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        $respondents = Respondents::findOrFail($id);
-
-        $respondents->delete();
-
-        return redirect()->route('respondents.index')->with('success', 'Data deleted successfully');
-    }
 }
