@@ -15,4 +15,12 @@ class Respondents extends Model
         'address',
         'status'
     ];
+
+    public static function getValidGenders()
+    {
+        return [
+            'Laki-laki' => 'Laki-laki',
+            'Perempuan' => 'Perempuan',
+        ];
+    }
 }

@@ -3,7 +3,7 @@
 @section('body')
     <h1 class="mb-0">Edit Identitas</h1>
     <hr />
-    <form action="{{ route('respondents.update', $respondents->id) }}" method="post">
+    <form action="{{ route('admin.update', $respondents->id) }}" method="post">
         @csrf
         @method('PUT')
         <div class="row">
@@ -13,7 +13,11 @@
             </div>
             <div class="col mb-3">
                 <label for="gender" class="form-label">Jenis Kelamin</label>
-                <input type="text" name="gender" class="form-control" id="gender" value="{{ $respondents->gender }}">
+                <select name="gender" id="gender" class="form-select">
+                    @foreach(\App\Models\Respondents::getValidGenders() as $key => $label)
+                        <option value="{{ $key }}" {{ $respondents->gender == $key ? 'selected' : '' }}>{{ $label }}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <div class="row">
