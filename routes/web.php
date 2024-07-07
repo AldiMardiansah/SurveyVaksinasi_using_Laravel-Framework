@@ -36,6 +36,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::group(['middleware' => ['auth', 'admin']], function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+    Route::resource('admin', AdminController::class);
 });
 
 Route::resource('/respondents', RespondentsController::class);
