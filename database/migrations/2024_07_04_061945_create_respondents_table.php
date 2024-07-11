@@ -13,10 +13,20 @@ return new class extends Migration
     {
         Schema::create('respondents', function (Blueprint $table) {
             $table->id();
+            $table->string('email')->unique(); //fk
+            $table->foreign('email')->references('email')->on('users')->onDelete('cascade'); //relasi
             $table->string('name');
-            $table->string('gender');
             $table->string('address');
+            $table->string('gender');
+            $table->integer('age');
             $table->string('status');
+            $table->string('doses'); //jumlah telah di vaksin
+            $table->string('vaccine'); //jenis vaksin-vaksin covid-19
+            $table->string('effects'); //efek samping penggunaan vaksin
+            $table->string('medical_history'); //riwayat penyakit yg dialami
+            $table->string('importance'); //skala pentingnya divaksin
+            $table->string('info_sufficiency'); //informasi kelengkapan ttg vaksin
+            $table->string('service_rate'); //skala pelayanan yang dialami
             $table->timestamps();
         });
     }
